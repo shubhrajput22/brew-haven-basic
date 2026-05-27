@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brew Haven Cafe – Fresh Coffee. Cozy Vibes. Good Times.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ═══════════════ LOADING SCREEN ═══════════════ -->
+<div id="loading-screen">
+  <div class="loading-bg-typography">
+    <span>SLOW BREWED</span>
+    <span>PERFECT MOMENTS</span>
+    <span>BREW HAVEN</span>
+  </div>
+  <div class="loading-animation">
+    <div class="loading-ring-container">
+      <div class="loading-ring"></div>
+      <div class="loading-ring-inner"></div>
+    </div>
+    <div class="loading-text">BREWING</div>
+  </div>
+</div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="logo-icon">☕</div>
+    <div class="logo-text">
+      <span>Brew Haven</span>
+      <span>Cafe</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order." target="_blank" class="btn-whatsapp-nav">
+        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+      </a>
+    </li>
+  </ul>
+
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#menu" onclick="closeMenu()">Menu</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#location" onclick="closeMenu()">Location</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20know%20more%20about%20your%20cafe." target="_blank" style="color:var(--green)!important; font-size:20px!important; background:rgba(45,80,22,0.1); padding:14px 32px; border-radius:50px;">
+    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+  </a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-mug-hot"></i>
+      &nbsp;Est. 2020 · Ahmedabad's Favourite Cafe
+    </div>
+    <h1>Fresh Coffee.<br/><span>Cozy</span> Vibes.</h1>
+    <p>A perfect place to relax, work, and enjoy delicious food. Come as you are — leave feeling wonderful.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary-lux"><i class="fas fa-utensils"></i> View Menu</a>
+      <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order." target="_blank" class="btn-glass"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+
+
+
+  <div class="hero-scroll" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ═══════════════ OFFER BANNER ═══════════════ -->
+<div class="offer-banner-lux">
+  <div class="offer-content">
+    <p><i class="fas fa-star" style="color:#FFD580; margin-right:6px;"></i> <span>Signature Offer</span> — Flat 10% OFF on all orders! Code: <strong style="color:#FFD580;">BREW10</strong></p>
+    <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20use%20code%20BREW10." target="_blank" class="btn-offer-lux">Claim Offer →</a>
+  </div>
+</div>
+
+<!-- ═══════════════ MENU ═══════════════ -->
+<section id="menu">
+  <div class="menu-header reveal">
+    <div class="section-tag">Our Offerings</div>
+    <h2 class="section-title">Crafted With Love</h2>
+    <p class="section-sub">From artisan coffees to fresh bites — every item on our menu is made to delight your senses.</p>
+  </div>
+
+  <div class="menu-tabs reveal">
+    <button class="tab-btn active" onclick="showTab('coffee', this)">
+      <i class="fas fa-mug-hot"></i> Coffee
+    </button>
+    <button class="tab-btn" onclick="showTab('snacks', this)">
+      <i class="fas fa-burger"></i> Snacks
+    </button>
+    <button class="tab-btn" onclick="showTab('desserts', this)">
+      <i class="fas fa-ice-cream"></i> Desserts
+    </button>
+    <button class="tab-btn" onclick="showTab('cold', this)">
+      <i class="fas fa-snowflake"></i> Cold Drinks
+    </button>
+  </div>
+
+  <!-- COFFEE -->
+  <div class="menu-grid active" id="tab-coffee">
+    <div class="menu-item reveal stagger-1">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=200&q=80" alt="Espresso"/>
+      <div class="menu-info">
+        <div class="menu-name">Espresso <span class="menu-badge badge-popular">Popular</span></div>
+        <div class="menu-desc">Rich, bold single or double shot. Perfectly extracted from premium beans.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹120</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Espresso." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal stagger-2">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=80" alt="Cappuccino"/>
+      <div class="menu-info">
+        <div class="menu-name">Cappuccino <span class="menu-badge badge-popular">Popular</span></div>
+        <div class="menu-desc">Velvety espresso topped with steamed milk and creamy foam. A timeless classic.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹150</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20a%20Cappuccino." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal stagger-3">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80" alt="Latte"/>
+      <div class="menu-info">
+        <div class="menu-name">Cafe Latte</div>
+        <div class="menu-desc">Smooth espresso with steamed milk and a thin layer of microfoam. Silky perfection.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹160</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20a%20Cafe%20Latte." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal stagger-4">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=200&q=80" alt="Mocha"/>
+      <div class="menu-info">
+        <div class="menu-name">Mocha <span class="menu-badge badge-new">New</span></div>
+        <div class="menu-desc">Espresso blended with rich chocolate syrup and steamed milk. Sweet indulgence.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹180</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20a%20Mocha." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNACKS -->
+  <div class="menu-grid" id="tab-snacks">
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=200&q=80" alt="Sandwich"/>
+      <div class="menu-info">
+        <div class="menu-name">Grilled Sandwich <span class="menu-badge badge-popular">Popular</span></div>
+        <div class="menu-desc">Toasted bread with fresh veggies, cheese, and herb spread. A crispy delight.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹120</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20a%20Grilled%20Sandwich." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=200&q=80" alt="Pasta"/>
+      <div class="menu-info">
+        <div class="menu-name">Creamy Pasta</div>
+        <div class="menu-desc">Al dente pasta in a rich cream sauce with herbs and parmesan shavings.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹180</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Creamy%20Pasta." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=200&q=80" alt="Pizza"/>
+      <div class="menu-info">
+        <div class="menu-name">Mini Pizza <span class="menu-badge badge-new">New</span></div>
+        <div class="menu-desc">Wood-fired personal pizzas with fresh toppings and house-made tomato sauce.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹200</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20a%20Mini%20Pizza." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=200&q=80" alt="Bruschetta"/>
+      <div class="menu-info">
+        <div class="menu-name">Bruschetta Bites</div>
+        <div class="menu-desc">Toasted bread with fresh tomatoes, basil, and a drizzle of balsamic glaze.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹140</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Bruschetta%20Bites." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-grid" id="tab-desserts">
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200&q=80" alt="Cheesecake"/>
+      <div class="menu-info">
+        <div class="menu-name">NY Cheesecake <span class="menu-badge badge-popular">Popular</span></div>
+        <div class="menu-desc">Classic New York-style cheesecake with a buttery graham crust. Heavenly rich.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹180</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20NY%20Cheesecake." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=200&q=80" alt="Brownie"/>
+      <div class="menu-info">
+        <div class="menu-name">Fudge Brownie</div>
+        <div class="menu-desc">Dense, chocolatey brownie served warm with a scoop of vanilla ice cream.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹160</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Fudge%20Brownie." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=80" alt="Croissant"/>
+      <div class="menu-info">
+        <div class="menu-name">Butter Croissant <span class="menu-badge badge-new">Fresh Daily</span></div>
+        <div class="menu-desc">Flaky, buttery layers baked fresh every morning. Perfect with your morning coffee.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹100</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Butter%20Croissant." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLD DRINKS -->
+  <div class="menu-grid" id="tab-cold">
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=80" alt="Cold Coffee"/>
+      <div class="menu-info">
+        <div class="menu-name">Cold Coffee <span class="menu-badge badge-popular">Popular</span></div>
+        <div class="menu-desc">Chilled brewed coffee blended with milk and a hint of caramel. Refreshingly bold.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹160</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Cold%20Coffee." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=200&q=80" alt="Frappuccino"/>
+      <div class="menu-info">
+        <div class="menu-name">Choco Frappe</div>
+        <div class="menu-desc">Blended iced coffee with rich chocolate and whipped cream on top. An absolute treat.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹190</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Choco%20Frappe." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+    <div class="menu-item reveal">
+      <img class="menu-img" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=200&q=80" alt="Matcha"/>
+      <div class="menu-info">
+        <div class="menu-name">Iced Matcha Latte <span class="menu-badge badge-new">New</span></div>
+        <div class="menu-desc">Premium ceremonial grade matcha whisked with oat milk over ice. Zen in a cup.</div>
+      </div>
+      <div class="menu-right">
+        <span class="menu-price">₹200</span>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order.%20I%20want%20to%20order%20Iced%20Matcha%20Latte." target="_blank" class="btn-add">Order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ORDER ONLINE ═══════════════ -->
+<section id="order-online" class="order-online-lux">
+  <div class="order-container reveal">
+    <div class="section-tag" style="margin-bottom:12px;">Delivery</div>
+    <h2 class="section-title">Order From Your Favorite Platform</h2>
+    <p class="section-sub" style="margin-bottom:36px; max-width:500px; margin-left:auto; margin-right:auto;">Enjoy our signature coffee and handcrafted bites delivered fresh to your doorstep in minutes.</p>
+    
+    <div class="order-buttons-grid">
+      <a href="https://www.swiggy.com" target="_blank" class="btn-delivery swiggy-btn">
+        <div class="btn-delivery-content">
+          <span class="delivery-platform">Order on Swiggy</span>
+          <span class="delivery-arrow">→</span>
+        </div>
+      </a>
+      <a href="https://www.zomato.com" target="_blank" class="btn-delivery zomato-btn">
+        <div class="btn-delivery-content">
+          <span class="delivery-platform">Order on Zomato</span>
+          <span class="delivery-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <img class="about-img"
+        src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=80"
+        alt="Brew Haven Cafe Interior"/>
+      <div class="about-img-badge">
+        <span>5★</span>
+        <span>Rated Cafe</span>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">More Than Just Coffee</h2>
+      <p class="section-sub">
+        Brew Haven was born from a simple dream — to create a place where every sip tells a story and every corner invites you to stay a little longer. Nestled in the heart of Ahmedabad, we're not just a cafe. We're your second home.
+        <br/><br/>
+        Whether you're catching up with friends, working on your next big idea, or simply savoring a quiet moment — Brew Haven is where life tastes better.
+      </p>
+      <div class="about-features">
+        <div class="feature-card reveal stagger-1">
+          <div class="feature-icon">☕</div>
+          <div>
+            <div class="feature-title">Great Coffee</div>
+            <div class="feature-desc">Single-origin beans, expertly roasted</div>
+          </div>
+        </div>
+        <div class="feature-card reveal stagger-2">
+          <div class="feature-icon">🛋️</div>
+          <div>
+            <div class="feature-title">Cozy Ambience</div>
+            <div class="feature-desc">Warm lighting, plush seating, good vibes</div>
+          </div>
+        </div>
+        <div class="feature-card reveal stagger-3">
+          <div class="feature-icon">😊</div>
+          <div>
+            <div class="feature-title">Friendly Service</div>
+            <div class="feature-desc">Our team treats every guest like family</div>
+          </div>
+        </div>
+        <div class="feature-card reveal stagger-4">
+          <div class="feature-icon">🌿</div>
+          <div>
+            <div class="feature-title">Fresh Ingredients</div>
+            <div class="feature-desc">Locally sourced, prepared fresh daily</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GALLERY ═══════════════ -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <div class="section-tag">Captured Moments</div>
+    <h2 class="section-title">Moments at Brew Haven</h2>
+
+  </div>
+
+  <div class="gallery-grid reveal">
+    <div class="gallery-item featured">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="Coffee"/>
+      <div class="gallery-overlay"><span>Artisan Coffee</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?w=400&q=80" alt="Cafe Interior"/>
+      <div class="gallery-overlay"><span>Our Space</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=400&q=80" alt="Food"/>
+      <div class="gallery-overlay"><span>Delicious Bites</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Latte Art"/>
+      <div class="gallery-overlay"><span>Latte Art</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Cozy Corner"/>
+      <div class="gallery-overlay"><span>Cozy Corners</span></div>
+    </div>
+    <div class="gallery-item featured">
+      <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?w=400&q=80" alt="Dessert"/>
+      <div class="gallery-overlay"><span>Sweet Treats</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ REVIEWS ═══════════════ -->
+<section id="reviews">
+  <div class="reviews-header reveal">
+    <div class="section-tag">Testimonials</div>
+    <h2 class="section-title">What Our Customers Say</h2>
+
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card reveal stagger-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Hands down the best cold coffee in Ahmedabad! The ambience is super cozy and Instagram-worthy. I come here almost every weekend with my friends."</p>
+      <div class="review-author">
+        <div class="review-avatar">P</div>
+        <div>
+          <div class="review-name">Priya Sharma</div>
+          <div class="review-title">Regular Customer · SG Highway</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal stagger-2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Perfect place to hang out with friends or work remotely. The WiFi is fast, coffee is amazing, and the staff is incredibly warm. My new favourite spot!"</p>
+      <div class="review-author">
+        <div class="review-avatar">R</div>
+        <div>
+          <div class="review-name">Rahul Mehta</div>
+          <div class="review-title">Freelancer · Thaltej</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal stagger-3">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The Cheesecake and Mocha combo is unbeatable! We celebrated our anniversary here and the team made it so special. Highly highly recommended ❤️"</p>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div>
+          <div class="review-name">Ananya & Dev</div>
+          <div class="review-title">Couple · Bodakdev</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ LOCATION ═══════════════ -->
+<section id="location">
+  <div class="location-inner">
+    <div class="location-map reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.7851897553!2d72.5073!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzIxLjAiTiA3MsKwMzAnMjYuMiJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Brew Haven Cafe Location">
+      </iframe>
+    </div>
+    <div class="location-info reveal">
+      <div class="section-tag">Visit Us</div>
+      <h2 class="section-title">Find Us in the Heart of Ahmedabad</h2>
+      <p class="section-sub" style="margin-bottom:32px;">We're easy to find and even easier to love. Drop by anytime!</p>
+
+      <div class="location-card">
+        <div class="loc-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="loc-label">Address</div>
+          <div class="loc-value">Brew Haven Cafe, SG Highway,<br/>Ahmedabad, Gujarat – 380054</div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="loc-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <div class="loc-label">Opening Hours</div>
+          <div class="loc-value opening-hours-list">
+            <div class="hours-row"><span>Mon – Fri</span><span>8 AM – 11 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span>8 AM – 11 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span>9 AM – 10 PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="loc-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="loc-label">Reservations & Orders</div>
+          <div class="loc-value">+91 90811 08102</div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="loc-icon"><i class="fas fa-parking"></i></div>
+        <div>
+          <div class="loc-label">Parking</div>
+          <div class="loc-value">Free parking available for all guests</div>
+        </div>
+      </div>
+
+      <a href="https://maps.google.com/?q=SG+Highway+Ahmedabad" target="_blank" class="btn-primary-lux" style="margin-top:24px; display:inline-flex;">
+        <i class="fas fa-directions"></i> Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-form-wrap reveal">
+      <div class="section-tag">Get in Touch</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-sub" style="margin-bottom:32px;">Have a question, want to book a table, or just want to say hi? We'd love to hear from you.</p>
+
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleForm(event)">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display: none;">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="e.g. Priya Sharma" required/>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+91 98765 43210"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="priya@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us anything — table booking, feedback, or just a hello! ☕" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          <i class="fas fa-paper-plane"></i> &nbsp;Send Message
+        </button>
+      </form>
+    </div>
+
+    <div class="contact-info reveal">
+      <div class="contact-cta-card">
+        <div style="font-size:48px; margin-bottom:16px;">☕</div>
+        <h3>Ready to Order?</h3>
+        <p>Skip the wait — order directly on WhatsApp and we'll have it ready for you in no time.</p>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order." target="_blank" class="btn-whatsapp-big">
+          <i class="fab fa-whatsapp" style="font-size:22px;"></i>
+          Order on WhatsApp
+        </a>
+        <p style="font-size:13px; opacity:0.7;">Average reply time: under 2 minutes</p>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Phone & WhatsApp</strong>
+            +91 90811 08102
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            hello@brewhavencafe.com
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Hours</strong>
+            8:00 AM – 11:00 PM, Every Day
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <strong>Instagram</strong>
+            @brewhavencafe
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo">
+        <div class="logo-icon">☕</div>
+        <div class="logo-text">
+          <span>Brew Haven</span>
+          <span style="color:rgba(250,243,232,0.5);">Cafe</span>
+        </div>
+      </a>
+      <p>Fresh Coffee. Cozy Vibes. Good Times. Your favourite cafe in the heart of Ahmedabad, where every cup is crafted with love.</p>
+      <div class="social-links">
+        <a href="#" class="social-link ig"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20know%20more%20about%20your%20cafe." target="_blank" class="social-link wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Opening Hours</h4>
+      <ul class="footer-hours">
+        <li><span>Mon – Fri</span><span>8 AM – 11 PM</span></li>
+        <li><span>Saturday</span><span>8 AM – 11 PM</span></li>
+        <li><span>Sunday</span><span>9 AM – 10 PM</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <p style="font-size:14px; line-height:1.7; margin-bottom:16px; color:rgba(250,243,232,0.65);">
+        Brew Haven Cafe<br/>
+        SG Highway, Ahmedabad<br/>
+        Gujarat, India – 380054
+      </p>
+      <p style="font-size:14px; color:rgba(250,243,232,0.65);">
+        📞 +91 90811 08102<br/>
+        ✉️ hello@brewhavencafe.com
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 <a href="#">Brew Haven Cafe</a>. All rights reserved. Made with ☕ in Ahmedabad.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+
+<!-- ═══════════════ FLOATING WA ═══════════════ -->
+<a href="https://wa.me/919081108102?text=Hi%20Brew%20Haven,%20I%E2%80%99d%20like%20to%20place%20an%20order." target="_blank" class="float-wa">
+  <i class="fab fa-whatsapp"></i>
+  <div class="float-wa-tooltip">Order on WhatsApp 🍵</div>
+</a>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script src="script.js"></script>
+</body>
+</html>
